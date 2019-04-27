@@ -40,12 +40,13 @@ target_link_libraries(slist)
 #set_target_properties(advances_data_structure PROPERTIES LINKER_LANGUAGE CXX)
 #target_link_libraries(advances_data_structure advances_data_structure_common)
 
-aux_source_directory(src/slist/test TEST_FILES)
+aux_source_directory(src/tests TEST_FILES)
+#aux_source_directory(src/tests/*.h TEST_FILES)
 add_executable(advances_data_structure_unittest ${TEST_FILES})
 target_include_directories(advances_data_structure_unittest PRIVATE ${GTEST_INCLUDE_DIR} unittest)
 target_include_directories(advances_data_structure_unittest PRIVATE "src/test" unittest)
 target_link_libraries(advances_data_structure_unittest
-        advances_data_structure_common
+        slist
         ${GTEST_LIBRARY}
         pthread)
 
