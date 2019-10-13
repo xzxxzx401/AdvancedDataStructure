@@ -5,6 +5,8 @@
 
 #include <atomic>
 
+// partial template specialization, must in std namespace
+
 template<typename T>
 class std::atomic<std::shared_ptr<T>> {
  public:
